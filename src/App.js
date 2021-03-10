@@ -17,12 +17,12 @@ function App() {
             </ol>
           </div>
           <div className="acciones">
-            <form className="numero"></form>
+            <span className="numero"></span>
             {/* El botón de llamar debe tener la clase "activo" cuando */}
             {/* el número de teléfono tiene 9 cifras */}
-            <button /* href="#" */ className="llamar">Llamar</button>
+            <a href="botón para llamar" className="llamar">Llamar</a>
             {/* Sólo se tiene que ver un botón u otro */}
-            <button /* href="#" */ className="colgar activo">Colgar</button>
+            <a href="botón para colgar" className="colgar activo">Colgar</a>
           </div>
         </main>
       </div>
