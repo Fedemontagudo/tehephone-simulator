@@ -1,6 +1,6 @@
 import { useState } from "react";
 const arrayTeclas = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0",];
-
+/* const marcarNumero = */
 
 function App() {
   const [numeros, setNumeros] = useState(arrayTeclas);
@@ -12,7 +12,7 @@ function App() {
         <main className="telefono">
           <div className="botones">
             <ol className="teclado">
-              {numeros.map(numero => <li key={numero} className="numeros"><button>{numero}</button></li>)}
+              {numeros.map(numero => <li key={numero} className="numeros"><button /* onClick={marcarNumero} */>{numero}</button></li>)}
               < li > <button className="big">borrar</button></li>
             </ol>
           </div>
@@ -28,6 +28,6 @@ function App() {
       </div>
     </>
   );
-}
+};
 
 export default App;
