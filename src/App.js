@@ -2,12 +2,12 @@
 function App() {
   return (
     <>
-      <div class="contenedor">
+      <div className="contenedor">
         {/* El siguiente elemento se oculta añadiéndole la clase "off" */}
-        <span class="mensaje">Llamando...</span>
-        <main class="telefono">
-          <div class="botones">
-            <ol class="teclado">
+        <span className="mensaje">Llamando...</span>
+        <main className="telefono">
+          <div className="botones">
+            <ol className="teclado">
               <li><button>1</button></li>
               <li><button>2</button></li>
               <li><button>3</button></li>
@@ -18,16 +18,16 @@ function App() {
               <li><button>8</button></li>
               <li><button>9</button></li>
               <li><button>0</button></li>
-              <li><button class="big">borrar</button></li>
+              <li><button className="big">borrar</button></li>
             </ol>
           </div>
-          <div class="acciones">
-            <span class="numero">667359961</span>
+          <div className="acciones">
+            <span className="numero">667359961</span>
             {/* El botón de llamar debe tener la clase "activo" cuando */}
             {/* el número de teléfono tiene 9 cifras */}
-            <a href="#" class="llamar">Llamar</a>
+            <button href="#" className="llamar">Llamar</button>
             {/* Sólo se tiene que ver un botón u otro */}
-            <a href="#" class="colgar activo">Colgar</a>
+            <button href="#" className="colgar activo">Colgar</button>
           </div>
         </main>
       </div>

@@ -73,7 +73,7 @@ li {
     flex-direction: column;
     align-items: center;
 }
-.acciones a {
+.acciones button {
     border-radius: 10px;
     padding: 20px;
     text-decoration: none;
@@ -87,7 +87,7 @@ li {
     cursor: pointer;
     opacity: 1;
 }
-.acciones a.activo:hover {
+.acciones button.activo:hover {
     transform: scale(1);
 }
 .acciones .llamar {
