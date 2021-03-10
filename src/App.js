@@ -1,9 +1,9 @@
 import { useState } from "react";
-const arrayNumeros = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0",];
+const arrayTeclas = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0",];
 
 
 function App() {
-  const [numeros, marcarNumeros] = useState(arrayNumeros);
+  const [numeros, setNumeros] = useState(arrayTeclas);
   return (
     <>
       <div className="contenedor">
@@ -12,12 +12,12 @@ function App() {
         <main className="telefono">
           <div className="botones">
             <ol className="teclado">
-              {numeros.map(numero => <li className="numeros"><button>{numero}</button></li>)}
+              {numeros.map(numero => <li key={numero} className="numeros"><button>{numero}</button></li>)}
               < li > <button className="big">borrar</button></li>
             </ol>
           </div>
           <div className="acciones">
-            <form className="numero">{numeros}</form>
+            <form className="numero"></form>
             {/* El botón de llamar debe tener la clase "activo" cuando */}
             {/* el número de teléfono tiene 9 cifras */}
             <button /* href="#" */ className="llamar">Llamar</button>
