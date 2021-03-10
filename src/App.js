@@ -1,5 +1,9 @@
+import { useState } from "react";
+const arrayTeclas = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0",];
+/* const marcarNumero = */
 
 function App() {
+  const [numeros, setNumeros] = useState(arrayTeclas);
   return (
     <>
       <div className="contenedor">
@@ -8,21 +12,12 @@ function App() {
         <main className="telefono">
           <div className="botones">
             <ol className="teclado">
-              <li><button>1</button></li>
-              <li><button>2</button></li>
-              <li><button>3</button></li>
-              <li><button>4</button></li>
-              <li><button>5</button></li>
-              <li><button>6</button></li>
-              <li><button>7</button></li>
-              <li><button>8</button></li>
-              <li><button>9</button></li>
-              <li><button>0</button></li>
-              <li><button className="big">borrar</button></li>
+              {numeros.map(numero => <li key={numero} className="numeros"><button /* onClick={marcarNumero} */>{numero}</button></li>)}
+              < li > <button className="big">borrar</button></li>
             </ol>
           </div>
           <div className="acciones">
-            <span className="numero">667359961</span>
+            <form className="numero"></form>
             {/* El botón de llamar debe tener la clase "activo" cuando */}
             {/* el número de teléfono tiene 9 cifras */}
             <button /* href="#" */ className="llamar">Llamar</button>
@@ -33,6 +28,6 @@ function App() {
       </div>
     </>
   );
-}
+};
 
 export default App;
