@@ -25,9 +25,9 @@ function App() {
             <span className="numero">667359961</span>
             {/* El botón de llamar debe tener la clase "activo" cuando */}
             {/* el número de teléfono tiene 9 cifras */}
-            <button href="#" className="llamar">Llamar</button>
+            <button /* href="#" */ className="llamar">Llamar</button>
             {/* Sólo se tiene que ver un botón u otro */}
-            <button href="#" className="colgar activo">Colgar</button>
+            <button /* href="#" */ className="colgar activo">Colgar</button>
           </div>
         </main>
       </div>
