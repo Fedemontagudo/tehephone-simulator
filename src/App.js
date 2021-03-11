@@ -6,7 +6,9 @@ function App() {
   const [numeros, setNumeros] = useState(arrayTeclas);
   const [numeroMarcar, setNumeroMarcar] = useState("");
   const mostrarNumero = (numeroPulsado) => {
-    setNumeroMarcar(numeroMarcar + numeroPulsado);
+    if (numeroMarcar.length < 9) {
+      setNumeroMarcar(numeroMarcar + numeroPulsado);
+    }
   };
 
 
