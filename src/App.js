@@ -4,6 +4,12 @@ const arrayTeclas = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0",];
 
 function App() {
   const [numeros, setNumeros] = useState(arrayTeclas);
+  const [numeroMarcar, setNumeroMarcar] = useState("");
+  const mostrarNumero = (numeroPulsado) => {
+    setNumeroMarcar(numeroMarcar + numeroPulsado);
+  };
+
+
   return (
     <>
       <div className="contenedor">
@@ -12,12 +18,14 @@ function App() {
         <main className="telefono">
           <div className="botones">
             <ol className="teclado">
-              {numeros.map(numero => <li key={numero} className="numeros"><button /* onClick={marcarNumero} */>{numero}</button></li>)}
-              < li > <button className="big">borrar</button></li>
+              {numeros.map(numero =>
+                <li key={numero} className="numeros">
+                  <button onClick={() => mostrarNumero(numero)}>{numero}</button></li>)}
+              <li> <button className="big">borrar</button></li>
             </ol>
           </div>
           <div className="acciones">
-            <span className="numero"></span>
+            <span className="numero">{numeroMarcar}</span>
             {/* El botón de llamar debe tener la clase "activo" cuando */}
             {/* el número de teléfono tiene 9 cifras */}
             <a href="botón para llamar" className="llamar">Llamar</a>
