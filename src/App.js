@@ -4,6 +4,16 @@ const arrayTeclas = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0",];
 
 function App() {
   const [numeros, setNumeros] = useState(arrayTeclas);
+  const [numeroMarcar, setNumeroMarcar] = useState("");
+  const mostrarNumero = (numeroPulsado) => {
+    if (numeroMarcar.length < 9) {
+      setNumeroMarcar(numeroMarcar + numeroPulsado);
+    }
+  };
+  const borrarNumero = () => {
+    setNumeroMarcar("");
+  };
+
   return (
     <>
       <div className="contenedor">
@@ -12,17 +22,19 @@ function App() {
         <main className="telefono">
           <div className="botones">
             <ol className="teclado">
-              {numeros.map(numero => <li key={numero} className="numeros"><button /* onClick={marcarNumero} */>{numero}</button></li>)}
-              < li > <button className="big">borrar</button></li>
+              {numeros.map(numero =>
+                <li key={numero} className="numeros">
+                  <button onClick={() => mostrarNumero(numero)}>{numero}</button></li>)}
+              <li> <button onClick={borrarNumero} className="big">borrar</button></li>
             </ol>
           </div>
           <div className="acciones">
-            <form className="numero"></form>
+            <span className="numero">{numeroMarcar}</span>
             {/* El botón de llamar debe tener la clase "activo" cuando */}
             {/* el número de teléfono tiene 9 cifras */}
-            <button /* href="#" */ className="llamar">Llamar</button>
+            <a href="botón para llamar" className="llamar">Llamar</a>
             {/* Sólo se tiene que ver un botón u otro */}
-            <button /* href="#" */ className="colgar activo">Colgar</button>
+            <a href="botón para colgar" className="colgar activo">Colgar</a>
           </div>
         </main>
       </div>
