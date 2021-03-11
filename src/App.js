@@ -14,15 +14,21 @@ function App() {
     setNumeroMarcar("");
   };
   const [llamando, setLlamando] = useState(false);
+  const cambioEstadoLlamada = (e) => {
+    e.preventDefault();
+    setLlamando(!llamando);
+  };
   const botonLlamar = <a href="botón para llamar"
-    className={`llamar ${numeroMarcar.length === 9 && !llamando ? "activo" : ""}`}>Llamar</a>;
+    className={`llamar ${numeroMarcar.length === 9 && !llamando ? "activo" : ""}`}
+    onClick={cambioEstadoLlamada}>Llamar</a>;
   const botonColgar = <a href="botón para colgar"
-    className={`colgar ${llamando ? "activo" : ""}`}>Colgar</a>;
+    className={`colgar ${llamando ? "activo" : ""}`}
+    onClick={cambioEstadoLlamada}>Colgar</a>;
   return (
     <>
       <div className="contenedor">
         {/* El siguiente elemento se oculta añadiéndole la clase "off" */}
-        <span className="mensaje">Llamando...</span>
+        <span className={`mensaje ${llamando ? "" : "off"}`}>Llamando...</span>
         <main className="telefono">
           <div className="botones">
             <ol className="teclado">
