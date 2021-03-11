@@ -14,6 +14,10 @@ function App() {
     setNumeroMarcar("");
   };
   const [llamando, setLlamando] = useState(false);
+  const botonLlamar = <a href="botón para llamar"
+    className={`llamar ${numeroMarcar.length === 9 && !llamando ? "activo" : ""}`}>Llamar</a>;
+  const botonColgar = <a href="botón para colgar"
+    className={`colgar ${llamando ? "activo" : ""}`}>Colgar</a>;
   return (
     <>
       <div className="contenedor">
@@ -30,10 +34,7 @@ function App() {
           </div>
           <div className="acciones">
             <span className="numero">{numeroMarcar}</span>
-            <a href="botón para llamar"
-              className={`llamar ${numeroMarcar.length === 9 && !llamando ? "activo" : ""}`}>Llamar</a>
-            <a href="botón para colgar"
-              className={`colgar ${llamando ? "activo" : ""}`}>Colgar</a>
+            {!llamando ? botonLlamar : botonColgar}
           </div>
         </main>
       </div>
