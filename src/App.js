@@ -10,7 +10,9 @@ function App() {
       setNumeroMarcar(numeroMarcar + numeroPulsado);
     }
   };
-
+  const borrarNumero = () => {
+    setNumeroMarcar("");
+  };
 
   return (
     <>
@@ -23,7 +25,7 @@ function App() {
               {numeros.map(numero =>
                 <li key={numero} className="numeros">
                   <button onClick={() => mostrarNumero(numero)}>{numero}</button></li>)}
-              <li> <button className="big">borrar</button></li>
+              <li> <button onClick={borrarNumero} className="big">borrar</button></li>
             </ol>
           </div>
           <div className="acciones">
