@@ -30,11 +30,10 @@ function App() {
           </div>
           <div className="acciones">
             <span className="numero">{numeroMarcar}</span>
-            {/* El botón de llamar debe tener la clase "activo" cuando */}
-            {/* el número de teléfono tiene 9 cifras */}
-            <a href="botón para llamar" className={`llamar ${!llamando ? "activo" : ""}`}>Llamar</a>
-            {/* Sólo se tiene que ver un botón u otro */}
-            <a href="botón para colgar" className={`colgar ${llamando ? "activo" : ""}`}>Colgar</a>
+            <a href="botón para llamar"
+              className={`llamar ${numeroMarcar.length === 9 && !llamando ? "activo" : ""}`}>Llamar</a>
+            <a href="botón para colgar"
+              className={`colgar ${llamando ? "activo" : ""}`}>Colgar</a>
           </div>
         </main>
       </div>
